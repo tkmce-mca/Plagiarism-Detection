@@ -1,0 +1,6 @@
+Current status:
+   code to read from text file and generating ngrams
+   ngrams generated from the given text and count the repeated words 
+   UI development is on progress
+Plans:
+   text extraction from text file and pdf file
