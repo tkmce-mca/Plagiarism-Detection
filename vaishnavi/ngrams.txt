@@ -1,0 +1,87 @@
+s="I am going for dinner. how are you. It is nice. I am going to Kollam"
+s
+
+'I am going for dinner. how are you. It is nice. I am going to Kollam'
+
+import re
+def ngram_gen(s, n):
+    s = s.lower()
+    s = re.sub(r'[^a-zA-Z0-9\s]', ' ', s)
+    tokens = [token for token in s.split(" ") if token != ""]
+    ngrams = zip(*[tokens[i:] for i in range(n)])
+    return [" ".join(ngram) for ngram in ngrams]
+am=ngram_gen(s, n=5)
+am
+
+['i am going for dinner',
+ 'am going for dinner how',
+ 'going for dinner how are',
+ 'for dinner how are you',
+ 'dinner how are you it',
+ 'how are you it is',
+ 'are you it is nice',
+ 'you it is nice i',
+ 'it is nice i am',
+ 'is nice i am going',
+ 'nice i am going to',
+ 'i am going to kollam']
+
+r= "i am happy for having dinner.i am ok.i am from kollam.how are you.it is nice happy to see you again"
+r
+
+'i am happy for having dinner.i am ok.i am from kollam.how are you.it is nice happy to see you again'
+
+import re
+
+def ngram_gen(s, n):
+    s = s.lower()
+    s = re.sub(r'[^a-zA-Z0-9\s]', ' ', s)
+    tokens = [token for token in s.split(" ") if token != ""]
+    ngrams = zip(*[tokens[i:] for i in range(n)])
+    return [" ".join(ngram) for ngram in ngrams]
+bm= ngram_gen(r, n=5)
+bm
+
+['i am happy for having',
+ 'am happy for having dinner',
+ 'happy for having dinner i',
+ 'for having dinner i am',
+ 'having dinner i am ok',
+ 'dinner i am ok i',
+ 'i am ok i am',
+ 'am ok i am from',
+ 'ok i am from kollam',
+ 'i am from kollam how',
+ 'am from kollam how are',
+ 'from kollam how are you',
+ 'kollam how are you it',
+ 'how are you it is',
+ 'are you it is nice',
+ 'you it is nice happy',
+ 'it is nice happy to',
+ 'is nice happy to see',
+ 'nice happy to see you',
+ 'happy to see you again']
+
+j=0
+cnt=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+for i in am:
+  c=bm.count(i)
+  print(i,c)
+  cnt[j]=c
+  j=j+1
+print(cnt)
+
+i am going for dinner 0
+am going for dinner how 0
+going for dinner how are 0
+for dinner how are you 0
+dinner how are you it 0
+how are you it is 1
+are you it is nice 1
+you it is nice i 0
+it is nice i am 0
+is nice i am going 0
+nice i am going to 0
+i am going to kollam 0
+[0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
