@@ -1,0 +1,6 @@
+**************CURRENT STATUS************
+ 
+ words extract from pdf using pyPDF2,textract,nltk python libraries.
+ 
+***************FORTHCOMING PLANS********
+ words extraction from a remote pdf.
