@@ -1,0 +1,7 @@
+current status:
+    pdf downloaded from url, words extracted and ngrams are generated
+    plagirism calculated between two files
+future plans:
+    compare a file among multiple urls
+    replacing words with alternative words and comparing
+    
